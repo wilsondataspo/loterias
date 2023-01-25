@@ -1,0 +1,16 @@
+beautifulsoup4==4.11.1
+certifi==2022.12.7
+charset-normalizer==3.0.1
+environs==9.5.0
+html5lib==1.1
+idna==3.4
+lxml==4.9.2
+marshmallow==3.19.0
+packaging==23.0
+pyTelegramBotAPI==4.9.0
+python-dotenv==0.21.1
+requests==2.28.2
+six==1.16.0
+soupsieve==2.3.2.post1
+urllib3==1.26.14
+webencodings==0.5.1
