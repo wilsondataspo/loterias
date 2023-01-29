@@ -9,4 +9,5 @@ class Config:
     TOKEN = environ["TOKEN"]
     URL_LOTO = environ["URL_LOTO"]
     DESTINATION = environ["DESTINATION"]
+    TOKEN_TG = environ["TOKEN_TG"]
     
