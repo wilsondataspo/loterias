@@ -35,20 +35,25 @@ def lotofacil_by_conc(BeautifulSoup, get, URL, conc):
     page = get(URL+"?concurso={}".format(conc))
     #
     soup = BeautifulSoup(page.content, 'html.parser')
-    #
-    texto = soup.find("h1").text
     
-    # concurso
-    resultado.append(texto.split()[-3])
-    
-    # data
-    resultado.append(texto.split()[-1])
-    #
-    dezenas = soup.find_all("span", class_="circle")
-    for tag in range(len(dezenas[:15])):
-        resultado.append(dezenas[tag].text)
-            
-    return dict(zip(colunas, resultado))
+    if not soup.find("div", class_="res-acu"):
+        #
+        texto = soup.find("h1").text
+        
+        # concurso
+        resultado.append(texto.split()[-3])
+        
+        # data
+        resultado.append(texto.split()[-1])
+        #
+        dezenas = soup.find_all("span", class_="circle")
+        for tag in range(len(dezenas[:15])):
+            resultado.append(dezenas[tag].text)
+                
+        return dict(zip(colunas, resultado))
+        
+    else:
+        return "erro"
 
 
 if __name__ == "__main__":
